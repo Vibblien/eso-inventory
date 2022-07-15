@@ -41,7 +41,7 @@ button {
 }
 .currentLevel {
   font-size: 50px;
-  font-family: Impact;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding-right: 2px;
 }
 
@@ -49,17 +49,34 @@ button {
   height: 17px;
   width: 200px;
   border: 1px white solid;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
 }
 .progressColor {
   width: 30%;
   height: 100%;
-  background-color: blue;
+  background: rgb(255, 25, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 25, 0, 1) 0%,
+    rgba(0, 249, 255, 1) 0%,
+    rgba(12, 0, 255, 1) 100%
+  );
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
 }
+.statusContainer {
+  padding-bottom: 12px;
+}
+.plusStatus {
+  color: goldenrod;
+  text-align: right;
+}
+.crownAmount {
+  text-align: right;
+}
+
 .headerBtns {
   height: 50px;
   display: flex;
@@ -281,7 +298,7 @@ h3 {
   background-color: black;
 }
 .item {
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.7);
   height: 50px;
   border: 2px black solid;
 
@@ -291,7 +308,7 @@ h3 {
   align-items: center;
 }
 .item:hover {
-  box-shadow: inset 0px 0px 5px black;
+  box-shadow: inset 0px 0px 5px gray;
 }
 .item:active {
   box-shadow: inset 0px 0px 5px white;
