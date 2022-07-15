@@ -1,0 +1,310 @@
+.area {
+  width: 100vw;
+  height: 150vh;
+  background-image: url(images/bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: 'Futura Condensed';
+  font-weight: bold;
+}
+button {
+  border-style: none;
+}
+.caps {
+  text-transform: uppercase;
+}
+.firstcap {
+  text-transform: capitalize;
+}
+
+/* * NAVIGATION BAR */
+.navBar {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+.levelDisplay {
+  /* width: 25vw; */
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 25px;
+}
+.navButtons {
+  /* width: 55vw; */
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.currentLevel {
+  font-size: 50px;
+  font-family: Impact;
+  padding-right: 2px;
+}
+
+.progressBar {
+  height: 17px;
+  width: 200px;
+  border: 1px white solid;
+  background-color: black;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.progressColor {
+  width: 30%;
+  height: 100%;
+  background-color: blue;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.headerBtns {
+  height: 50px;
+  display: flex;
+}
+.headerBtns button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px black solid;
+  background-size: contain;
+  margin-left: 5px;
+}
+.headerBtns span {
+  height: 40px;
+}
+.emptySpan {
+  width: 212px;
+}
+
+/* * NAVIGATION BAR ICONS */
+.crownStore {
+  border-radius: 25px;
+  background-image: url(images/crownIcon.png);
+}
+.crownCrates {
+  border-radius: 25px;
+  background-image: url(images/crateIcon.png);
+}
+.divider {
+  background-color: beige;
+  width: 2px;
+  height: 40px;
+  margin-left: 5px;
+}
+.inventory {
+  background-image: url(images/inventoryIcon.png);
+}
+.character {
+  background-image: url(images/characterIcon.png);
+}
+
+/* *EQUIPPED VIEWPORT */
+.equipped {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 450px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 200px 175px 75px;
+  grid-template-rows: 35px 265px 100px 100px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+.equippedTitle {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.equipped h2,
+h3 {
+  margin: 0px;
+}
+
+/* *APPAREL VIEWPORT */
+.apparel {
+  display: grid;
+  grid-column-start: 1;
+  grid-gap: 5px;
+  grid-template-columns: 50px 50px 50px;
+  grid-template-rows: 25px 50px 50px 50px 50px;
+}
+.apparel div {
+  background-color: black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+}
+.apparelTitle {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+#head {
+  grid-column-start: 2;
+}
+#shoulder {
+  grid-column-start: 1;
+}
+#body {
+  grid-row-start: 3;
+  grid-row-end: 6;
+  grid-column-start: 2;
+  border-style: none;
+  background-color: transparent;
+  background-image: url(images/humansil.png);
+  background-size: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* *ACCESSORIES VIEWPORT */
+.accessories {
+  display: grid;
+  grid-column-start: 1;
+  grid-gap: 5px;
+  grid-template-columns: 45px 45px 45px 45px;
+  grid-template-rows: 25px 45px;
+}
+.accessories div {
+  background-color: black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+}
+.accessoryTitle {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+/* *WEAPONS VIEWPORT */
+.weapons {
+  grid-row-start: 4;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: 25px 50px;
+}
+.weaponTitle {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.weapons div {
+  background-color: black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+}
+
+/* *STATS VIEWPORT */
+.statsTitle {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  margin-left: 10px;
+}
+.statsTitle h4 {
+  color: rgb(180, 175, 163);
+  margin: 0px;
+  text-align: left;
+}
+.section1,
+.section2 {
+  margin-bottom: 20px;
+}
+.statsValues {
+  text-align: right;
+  margin-right: 20px;
+}
+
+/* * HERO  AND HERO DISPLAY*/
+.hero {
+  margin-top: 30px;
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  color: white;
+}
+.displayHero {
+  display: flex;
+  align-items: center;
+}
+
+/* * ITEM INVENTORY VIEWPORT */
+.itemArea {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 450px;
+  height: 635px;
+  display: grid;
+  grid-gap: 5px;
+  justify-items: right;
+  grid-template-rows: 50px 50px 35px 450px 25px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+.itemArea button {
+  height: 32px;
+  width: 32px;
+  background-color: black;
+}
+.itemDisplay {
+  width: 435px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  overflow-y: scroll;
+}
+.inventorySpace {
+  padding-top: 22px;
+}
+.frozenBar {
+  display: grid;
+  width: 435px;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 100%;
+  align-items: center;
+  position: absolute;
+  background-color: black;
+}
+.item {
+  background-color: gray;
+  height: 50px;
+  border: 2px black solid;
+
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 100%;
+  align-items: center;
+}
+.item:hover {
+  box-shadow: inset 0px 0px 5px black;
+}
+.item:active {
+  box-shadow: inset 0px 0px 5px white;
+}
+
+.footerRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+.invTotal {
+  padding-left: 10px;
+}
+.goldTotal {
+  text-align: right;
+}
