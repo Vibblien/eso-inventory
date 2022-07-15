@@ -2,15 +2,15 @@ import './App.css';
 import React from 'react';
 
 // ? for tey
-// ? github walk-through for Bethany collab
-// ? Ring and weapon IFs
+// g̶i̶t̶h̶u̶b̶ w̶a̶l̶k̶-̶t̶h̶r̶o̶u̶g̶h̶ f̶o̶r̶ B̶e̶t̶h̶a̶n̶y̶ c̶o̶l̶l̶a̶b̶
+// R̶i̶n̶g̶ a̶n̶d̶ w̶e̶a̶p̶o̶n̶ I̶F̶s̶
 
 // * else if = otherwise if
 // * shorthand function everywhere, practice arrow
 // * everything that references props or state/setState must go in a component
 // * use the function keyword when declaring a component or a stand-alone function.
 // * use the anonymous declaration (fat arrow) when declaring functions inside of a component.
-// * anything that doesnt depend on props or just takes a
+// * anything that doesn't depend on props or just takes a
 //* generic argument can be outside of App
 
 // TODO -
@@ -18,7 +18,7 @@ import React from 'react';
 // g̶e̶t̶ r̶i̶d̶ o̶f̶ c̶l̶a̶s̶s̶n̶a̶m̶e̶s̶ w̶/̶o̶ u̶s̶e̶,̶
 // TODO center nav buttons
 // a̶d̶d̶ s̶c̶r̶o̶l̶l̶ f̶u̶n̶c̶t̶i̶o̶n̶ t̶o̶ i̶n̶v̶e̶n̶t̶o̶r̶y̶ w̶i̶n̶d̶o̶w̶
-// TODO add states to accessories and weapon slots
+// a̶d̶d̶ s̶t̶a̶t̶e̶s̶ t̶o̶ a̶c̶c̶e̶s̶s̶o̶r̶i̶e̶s̶ a̶n̶d̶ w̶e̶a̶p̶o̶n̶ s̶l̶o̶t̶s̶
 // TODO finish icons today
 // TODO add stat variables
 // ? add stat effects to item objects
@@ -46,16 +46,15 @@ function InvItem(props) {
 
 function App() {
   //* USE STATES FOR EACH APPAREL SLOT
-  const [headSlot, setHeadSlot] = React.useState('head (empty)');
-  const [shoulderSlot, setShoulderSlot] = React.useState('shoulder (empty)');
-  const [chestSlot, setChestSlot] = React.useState('chest (empty)');
-  const [handsSlot, setHandsSlot] = React.useState('hands (empty)');
-  const [waistSlot, setWaistSlot] = React.useState('waist (empty)');
-  const [legsSlot, setLegsSlot] = React.useState('legs (empty)');
-  const [feetSlot, setFeetSlot] = React.useState('feet (empty)');
+  const [headSlot, setHeadSlot] = React.useState('head');
+  const [shoulderSlot, setShoulderSlot] = React.useState('shoulder');
+  const [chestSlot, setChestSlot] = React.useState('chest');
+  const [handsSlot, setHandsSlot] = React.useState('hands');
+  const [waistSlot, setWaistSlot] = React.useState('waist');
+  const [legsSlot, setLegsSlot] = React.useState('legs');
+  const [feetSlot, setFeetSlot] = React.useState('feet');
 
   //* USE STATES FOR ADDITIONAL SLOTS
-  // TODO - RING1, RING2, MAIN, OFF,
   const [hangerSlot, setHangerSlot] = React.useState('hanger');
   const [neckSlot, setNeckSlot] = React.useState('neck');
   const [ring1Slot, setRing1Slot] = React.useState(null);
@@ -71,7 +70,6 @@ function App() {
       pic: 'XL',
       title: 'Ring of Life',
       value: '450',
-      swiftness: '10',
     },
     { type: 'ring', pic: 'XF', title: 'Ring of Fire', value: '300' },
     { type: 'head', pic: 'X', title: 'Helm of Darkness', value: '40' },
@@ -115,7 +113,6 @@ function App() {
     if (itemType === 'neck') {
       setNeckSlot(itemPic);
     }
-
     if (itemType === 'ring') {
       if (ring1Slot == null) {
         setRing1Slot(itemPic);
@@ -125,7 +122,6 @@ function App() {
         console.warn('ring slots full');
       }
     }
-
     if (itemType === 'weapon') {
       if (mainSlot == null) {
         setMainSlot(itemPic);
@@ -135,21 +131,6 @@ function App() {
         console.warn('weapon slots full');
       }
     }
-
-    // if (itemType === 'weapon') {
-    //   if (mainEquipped === null || mainEquipped === false) {
-    //     mainEquipped = true;
-    //     setMainSlot(itemPic);
-    //   } else {
-    //     if (offEquipped === null || offEquipped === false) {
-    //       offEquipped = true;
-    //       setOffhandSlot(itemPic);
-    //     } else {
-    //       alert('ALL WEAPON SLOTS ARE FULL');
-    //     }
-    //   }
-    // }
-
     if (itemType === 'poison') {
       setPoisonSlot(itemPic);
     }
@@ -158,38 +139,65 @@ function App() {
   /**
    * UN-EQUIP FUNCTION
    */
-  function unEquipItem(event) {
+  const unEquipItem = (event) => {
     const itemType = event.target.id;
+    const slotName = event.target.className;
 
     if (itemType === 'head') {
-      setHeadSlot('head (empty)');
+      setHeadSlot('head');
     }
     if (itemType === 'shoulder') {
-      setShoulderSlot('shoulder (empty)');
+      setShoulderSlot('shoulder');
     }
     if (itemType === 'chest') {
-      setChestSlot('chest (empty)');
+      setChestSlot('chest');
     }
     if (itemType === 'hands') {
-      setHandsSlot('hands (empty)');
+      setHandsSlot('hands');
     }
     if (itemType === 'waist') {
-      setWaistSlot('waist (empty)');
+      setWaistSlot('waist');
     }
     if (itemType === 'legs') {
-      setLegsSlot('legs (empty)');
+      setLegsSlot('legs');
     }
     if (itemType === 'feet') {
-      setFeetSlot('feet (empty)');
+      setFeetSlot('feet');
     }
-  }
+    if (itemType === 'hanger') {
+      setHangerSlot('hanger');
+    }
+    if (itemType === 'neck') {
+      setNeckSlot('neck');
+    }
+    if (itemType === 'ring') {
+      if (slotName === 'ring1Slot') {
+        setRing1Slot(null);
+      }
+      if (slotName === 'ring2Slot') {
+        setRing2Slot(null);
+      }
+    }
+    if (itemType === 'weapon') {
+      if (slotName === 'mainHandSlot') {
+        setMainSlot(null);
+      }
+      if (slotName === 'offHandSlot') {
+        setOffhandSlot(null);
+      }
+    }
+    // poison
+    if (itemType === 'poison') {
+      setPoisonSlot('poison');
+    }
+  };
 
   return (
     <div className="app">
       <div className="area">
         <div className="navBar">
           <div className="levelDisplay">
-            <div className="currentLevel">15</div>
+            <div className="currentLevel">24</div>
             <div>
               <div className="levelText caps">level</div>
               <div className="progressBar">
@@ -198,9 +206,9 @@ function App() {
             </div>
           </div>
           <div className="navButtons">
-            <div>
-              <div className="plusStatus caps">plus status</div>
-              <div className="crownAmount caps">#ofcrowns</div>
+            <div className="statusContainer">
+              <div className="plusStatus caps">ESO PLUS</div>
+              <div className="crownAmount caps">550</div>
             </div>
             <div className="headerBtns">
               <button className="crownStore"></button>
@@ -299,20 +307,30 @@ function App() {
             </div>
             <div className="accessories">
               <h3 className="accessoryTitle caps">accessories</h3>
-              <div className="hangerSlot">{hangerSlot}</div>
-              <div className="neckSlot">{neckSlot}</div>
-              <div className="ring1Slot">
+              <div onClick={unEquipItem} id="hanger">
+                {hangerSlot}
+              </div>
+              <div onClick={unEquipItem} id="neck">
+                {neckSlot}
+              </div>
+              <div onClick={unEquipItem} id="ring" className="ring1Slot">
                 {ring1Slot != null ? ring1Slot : 'ring'}
               </div>
-              <div className="ring2Slot">
+              <div onClick={unEquipItem} id="ring" className="ring2Slot">
                 {ring2Slot != null ? ring2Slot : 'ring'}
               </div>
             </div>
             <div className="weapons">
               <h3 className="weaponTitle caps">weapons</h3>
-              <div className="mainHand1">{mainSlot}</div>
-              <div className="offHand1">{offhandSlot}</div>
-              <div className="poison1">{poisonSlot}</div>
+              <div onClick={unEquipItem} id="weapon" className="mainHandSlot">
+                {mainSlot != null ? mainSlot : 'weapon'}
+              </div>
+              <div onClick={unEquipItem} id="weapon" className="offHandSlot">
+                {offhandSlot != null ? offhandSlot : 'weapon'}
+              </div>
+              <div onClick={unEquipItem} id="poison" className="poisonSlot">
+                {poisonSlot}
+              </div>
             </div>
           </div>
           <div className="displayHero">HERO DISPLAYED HERE</div>
